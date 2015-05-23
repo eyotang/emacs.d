@@ -1,0 +1,1018 @@
+2007-07-17  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-file-not-found-handler): 1.114 new
+	function
+	(clearcase-global-menu): 1.114 add vc-clearcase-report-bug to the
+	menu.
+	(ah-clearcase-never-report): 1.114 new variable
+	(vc-clearcase-report-bug): 1.114 find and report on all variables
+	in the vc-clearcase package.
+
+2007-07-09  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-set-activity): 1.113 accept an
+	activity name as argument, in interactive mode, ask the user for
+	an activity
+	(vc-clearcase-show-current-activity): 1.113 new function
+
+2007-07-08  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-retrieve-activities): 1.112
+	removed
+	(ah-clearcase-read-activity): 1.112 also retrieve activities.
+	(ah-clearcase-complete-view-tag): 1.112 removed
+	(ah-clearcase-read-view-tag): 1.112 use a lambda form for the
+	completion function.
+	(ah-clearcase-complete-label): 1.112 removed
+	(ah-clearcase-read-label): 1.112 use a lambda form for the
+	completion function.
+
+2007-07-04  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-vprop): 1.111 new slots,
+	activities, activities-tid
+	(ah-clearcase-get-vprop): 1.111 when creating a new
+	ah-clearcase-vprop structure, initialize activities and
+	activities-tid
+	(ah-clearcase-refresh-files-in-view): 1.111 doc update.
+	(ah-clearcase-retrieve-activities): 1.111 new function.
+	(vc-clearcase-cancel-version): 1.111 when checking out a file, use
+	the checkout comment of the canceled version; doc updates; allow
+	canceling versions with hyperlinks
+	(vc-clearcase-what-view-tag): 1.111 only display the view name and
+	current activity
+	(vc-clearcase-set-activity): 1.111 new function, added to the
+	keymap and menu
+
+2007-06-26  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-diff): 1.110 use
+	vc-clearcase-diff-switches directly, also reorganized the routine.
+
+2007-06-22  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-report-bug): 1.108 updated with
+	all defvar, defconst and defcustom symbols.
+
+2007-06-21  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-cancel-version),
+	(vc-clearcase-revert): 1.106 after removing a branch, do an update
+	in snapshot views.  Bug 1740843.
+	(vc-clearcase-steal-lock): 1.106 abort gracefully when we cannot
+	checkout the file. Bug 1740839.
+
+2007-06-20  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool): 1.105 tell the bytecompiler that
+	the function is format like.
+
+2007-06-03  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-annotate-post-process): 1.104
+	adjust filler string to the right size
+
+2007-05-24  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-get-keep-file-name): 1.102 new
+	function
+	(with-clearcase-checkout, ah-clearcase-finish-checkout): 1.102
+	pass -nquery to the checkout command
+	(vc-clearcase-cancel-version): 1.102 use
+	ah-clearcase-get-keep-file-name; only turn on the write bit on the
+	file (instead of setting default mode bits)
+	(vc-clearcase-steal-lock): 1.102 new function
+	(vc-clearcase-cancel-version, vc-clearcase-steal-lock): 1.103
+	leave the kep file in place if the function fails.
+
+2007-05-23  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool)
+	(ah-clearcase-complete-view-tag)
+	(ah-clearcase-read-view-tag)
+	(ah-clearcase-all-labels)
+	(ah-clearcase-collect-labels-point)
+	(ah-clearcase-complete-label)
+	(ah-clearcase-complete-label)
+	(with-clearcase-cfile)
+	(vc-clearcase-create-snapshot)
+	(vc-clearcase-label-diff-report)
+	(vc-clearcase-report-bug)
+	(ah-clearcase-function-to-trace): 1.101 updated messages and doc
+	strings at the recomandation of the `checkdoc' function.
+
+2007-05-11  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el
+	(ah-clearcase-lshistory-fmt-ucm): 1.100 new variable
+	(vc-clearcase-print-log): 1.100 use
+	`ah-clearcase-lshistory-fmt-ucm' when the file is in an UCM view.
+	(vc-clearcase-what-view-tag): 1.100 in UCM views also show the
+	stream and activity set in the view.
+
+2007-05-09  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-get-vprop): 1.99 Doc update,
+	remove a bad vprop from the `ah-clearcase-all-vprops'
+
+2007-05-08  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-vprop): 1.98 new fields in the
+	structure.
+	(ah-clearcase-snapshot-view-p, ah-clearcase-dynamic-view-p): 1.98
+	use the properties field in the vprop structure.
+	(ah-clearcase-ucm-view-p): 1.98 new function.
+	(ah-clearcase-prepare-vprop): 1.98 function removed
+	(ah-clearcase-get-vprop): 1.98 when creating a new vprop, populate
+	the properties and stream fields with info from ClearCase
+	(ah-clearcase-maybe-set-vc-state): 1.98 set the root-path in the
+	file's vprop if needed.
+	(with-clearcase-checkout, vc-clearcase-checkin): 1.98 pass "-ptime
+	-nwarn" to checkin/checkout commands.
+	(vc-clearcase-mode-line-string): 1.98 for UCM views, put the
+	stream name in the modeline
+	(ah-clearcase-finish-checkout): 1.98 pass "-nwarn" to checkout.
+	(ah-clearcase-setcs): 1.98 update for new vprop structure.
+
+
+2007-04-04  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-start-ediff-button): 1.97 require
+	the ediff package
+
+2007-03-14  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (with-clearcase-cfile): 1.96 use "vc-clearcase-"
+	as the prefix for the temporary file.
+	(vc-clearcase-cancel-version): 1.96 new function.
+
+2007-01-24  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-diff-switches): 1.95 new variable
+	(ah-clearcase-diff-format): 1.95 removed
+	(vc-clearcase-diff): 1.95 use vc-clearcase-diff-switches instead
+	of ah-clearcase-diff-format
+
+2007-01-02  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-annotate-command): 1.94 use 8
+	characters for the user name in the annotate output.
+	(vc-clearcase-annotate-command): 1.94 remove call to
+	ah-clearcase-annotate-post-process.
+	(ah-clearcase-annotate-deleted-face): face removed.
+	(ah-clearcase-annotate-mark-deleted): function removed.
+	(vc-clearcase-start-ediff-button): 1.94 require the ediff-vers
+	package instead of ediff.
+
+2006-12-27  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-log-view-forward-record): 1.93 use
+	destructuring-bind instead of multiple-value-bind
+
+2006-12-23  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-find-version): 1.92 only delete
+	the temporary file if it exists.
+
+2006-12-10  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.91 (Bug 1608947) require the cl package at
+	runtime
+	(vc-clearcase-start-ediff-button): 1.91 require the ediff package
+	and declare ediff-version-control-package as special to avoid
+	compiler warnings.
+
+2006-11-04  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-what-version): 1.90 save the
+	version in the kill ring in addition to displaying it to the user.
+
+2006-11-01  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.89 load the "button" library if it is
+	available.
+	(vc-clearcase-start-ediff-button): 1.89 define as a button to
+	start an ediff session for a file printed in a label difference
+	report.
+	(vc-clearcase-label-diff-report): 1.89 use buttons for all files
+	reported on.
+
+2006-10-03  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase): 1.88 add autoload cookie for the
+	vc-clearcase group
+	(ah-cleartool-tq-sentinel): 1.88 use message instead of error to
+	report that the cleartool buffer was killed.  Perform cleanup even
+	when the buffer was killed.
+	(ah-cleartool-tq-stop): 1.88 make sure we clean up properly even
+	when some buffers are killed.
+	(ah-cleartool-tq-maybe-start): 1.88 ckeck if someone killed the
+	tq-buffer and recover properly
+
+2006-08-10  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-checkout-comment-type): 1.87
+	renamed from vc-clearcase-checkout-comment-type.  Users updated
+	(ah-clearcase-checkout-policy): 1.87 renamed from
+	vc-clearcase-checkout-policy.  Users updated.
+	(ah-clearcase-confirm-label-move): 1.87 new variable
+	(vc-clearcase-create-snapshot): 1.87 use
+	ah-clearcase-confirm-label-move
+	(vc-clearcase-report-bug): 1.87 add new variables to the report
+
+2006-07-09  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-checkout-policy): 1.86 new
+	variable.
+	(vc-clearcase-checkout): 1.86 use it.
+
+2006-07-01  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-checkout-comment-type): 1.85 new
+	variable.
+	(vc-clearcase-checkout): 1.85 use the value of
+	vc-clearcase-checkout-comment-type to decide whether to ask for a
+	checkout comment or not.
+	(ah-clearcase-no-label-action): 1.85 doc fix.
+
+2006-06-25  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.84 todo and known bugs sections moved into
+	the todo.txt file.
+
+2006-06-21  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (require): 1.82 require the trace library at
+	compile time.
+	Updated installation instructions
+
+2006-04-04  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-vob-tag-for-path): 1.80 doc
+	update.
+	(ah-clearcase-vob-tag-for-path): 1.80 return the correct vob tag
+	on unix platforms as well.
+	(ah-clearcase-collect-labels-finished): 1.80 new variable.
+	(ah-clearcase-collect-labels-sentinel): 1.80 don't use process-get
+	as it is not available in GNU Emacs 21
+	(ah-clearcase-collect-labels-filter): 1.80 don't use process-put
+	as it is not available in GNU Emacs 21
+	(ah-clearcase-collect-labels-for-vob): 1.80 set
+	ah-clearcase-collect-labels-finished as buffer local.
+	(ah-clearcase-read-label): 1.80 doc update, plus new function
+	parameter, REUSE-LABELS
+	(vc-create-snapshot): 1.80 advise it to provide completion on
+	label names for ClearCase files.
+	(vc-clearcase-label-diff-report): 1.80 don't use
+	read-directory-name as it is not available on GNU Emacs 21
+
+2006-04-03  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-signal-error)
+	(ah-cleartool-sentinel, ah-clearcase-fprop-branch)
+	(ah-clearcase-fprop-version-base)
+	(ah-clearcase-fprop-version-number, ah-clearcase-fprop-latest-sel)
+	(ah-clearcase-fprop-latest)
+	(ah-clearcase-set-fprop-version-stage-1)
+	(ah-clearcase-set-fprop-version-stage-2)
+	(vc-clearcase-get-label-differences, vc-clearcase-what-version)
+	(vc-clearcase-what-rule, vc-clearcase-what-view-tag)
+	(vc-clearcase-edcs, vc-clearcase-start-view): 1.79 doc update.
+	(ah-clearcase-vob-tag-for-path)
+	(ah-clearcase-collect-labels-sentinel)
+	(ah-clearcase-collect-labels-filter)
+	(ah-clearcase-collect-labels-for-vob)
+	(ah-clearcase-complete-label ah-clearcase-read-label): 1.79 new
+	functions
+	(ah-clearcase-all-labels, ah-clearcase-collect-labels-point): 1.79
+	new variables
+	(ah-clearcase-complete-view-tag): 1.79 renamed from
+	ah-clearcase-view-tag-complete, callers updated
+	(vc-clearcase-label-diff-report): 1.79 use ah-clearcase-read-label
+	when called interactively.
+
+2006-03-30  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-tq-start, ah-cleartool-ask)
+	(ah-clearcase-log-view-forward-record, vc-clearcase-state)
+	(vc-clearcase-print-log, vc-clearcase-annotate-command)
+	(ah-clearcase-setcs): 1.78 use quote (') instead of
+	hash-quote (#') for functions.
+	(ah-clearcase-fprop): 1.78 file-name new member; latest,
+	latest-sel, mode-line, base, branch members removed.
+	(ah-clearcase-fprop-branch, ah-clearcase-fprop-version-base)
+	(ah-clearcase-fprop-version-number, ah-clearcase-fprop-latest-sel)
+	(ah-clearcase-fprop-latest): 1.78 new functions
+	(ah-clearcase-set-fprop-version-stage-1): 1.78 renamed from
+	ah-clearcase-set-fprop-version, plus don't fill in the removed
+	fields from ah-clearcase-fprop
+	(ah-clearcase-set-fprop-version-stage-2): 1.78 renamef from
+	ah-clearcase-set-fprop-version-simple, plus don't fill in the
+	removed fields from ah-clearcase-fprop
+	(ah-clearcase-prepare-vprop): 1.78 use a simple ah-cleartool call
+	to get the view tag.
+	(ah-clearcase-version-base, ah-clearcase-version-version)
+	(ah-clearcase-version-branch): functions removed
+	(ah-clearcase-maybe-set-vc-state): 1.78 don't set the latest
+	version in the fprop, it will be fetched on-demand by
+	ah-clearcase-fprop-latest
+	(vc-clearcase-registered): 1.78 add the file-name when creating a
+	new fprop.
+	(vc-clearcase-dir-state): function removed, implementation was
+	incomplete anyway.
+	(vc-clearcase-mode-line-string): 1.78 all the mode-line string
+	computation was moved in here.
+	(vc-clearcase-revert): 1.78 changed it so it does not use
+	ah-clearcase-fprop-latest, which requires a cleartool command.
+	(ah-clearcase-function-to-trace): 1.78 bugfix: ah-clearcase-ask
+	was not a function name.
+
+2006-03-28  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-get-branch-attribute): removed
+
+2006-03-21  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-get-vprop): 1.75 use member* to
+	look for the vprop.
+	(vc-clearcase-next-version): 1.75 use member to search the next
+	version in the revision list.
+	(vc-clearcase-get-label-differences): 1.76 use a loop to collect
+	the results.
+
+	* vc-clearcase.el: 1.76 The lisp-indent-function properties for the
+	macros are now in the file rather than in the Local Variables
+	section.
+
+2006-03-18  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-log-view-bor): 1.74 indentation
+	change.
+
+2006-03-14  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-get-label-differences): 1.73
+	change the "/" to "." for the current directory.
+	(vc-clearcase-label-diff-report): 1.73 call expand-file-name on
+	dir, set the current directory of the report buffer to dir.
+
+2006-03-13  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-get-label-differences): 1.72
+	remove a leading slash or backslash from the files in the report.
+
+2006-03-10  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-sentinel): 1.71 print out a
+	message when the cleartool process buffer is killer, instead of
+	signaling an error
+	(vc-clearcase-get-branch-attribute)
+	(vc-clearcase-get-label-differences): 1.71 new function
+	(vc-clearcase-what-version, vc-clearcase-what-rule)
+	(vc-clearcase-what-view-tag): 1.71 accept a file argument which in
+	interactive mode will be bound to the current buffers file name.
+	(vc-clearcase-label-diff-report): 1.71 use
+	vc-clearcase-get-label-differences, plus rewriten body.
+
+2006-03-07  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-list-checkouts): 1.70 make
+	prefix-arg optional
+	(ah-clearcase-read-view-tag): 1.70 new function.
+	(vc-clearcase-edcs, vc-clearcase-start-view): 1.70 use it.  Also
+	read the view-tag in the interactive form, allowing these
+	functions to be used from elisp code as well.
+	(clearcase-global-menu): 1.70 add the string "..." to all menu
+	names, indicating that the menu items will prompt the user for
+	more information.
+
+2006-03-06  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-what-version)
+	(vc-clearcase-what-rule, vc-clearcase-what-view-tag): 1.69 removed
+	autoload cookie, also handle corectly the case when we are called
+	in a buffer which is not associated with a file.
+	(vc-clearcase-gui-vtree-browser): 1.69 remove autoload cookie
+	(vc-clearcase-start-view): 1.69 new function
+	(vc-prefix-map): 1.69 order the define-key calls in alphabetical
+	order.
+	(clearcase-global-menu): 1.69 add a "Start dynamic view" menu
+	entry.
+
+2006-02-24  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.68 applied GPL licence to the file, added the
+	sourceforge address for the vc-clearcase project
+
+	Initial public release
+
+2006-01-30  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-create-snapshot): 1.67 bugfix, the
+	error was always reported even if the label was created.
+
+2006-01-24  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-annotate-post-process)
+	(ah-clearcase-annotate-mark-deleted) : 1.66 the buffer argument is
+	now mandatory
+
+2006-01-23  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool): 1.65 new function,
+	all (ah-cleartool-ask (format ...)) calls replaced with it.
+	(ah-clearcase-get-vprop): 1.65 re-coded it to use let*
+	(ah-clearcase-annotate-post-process)
+	(ah-clearcase-annotate-mark-deleted, ah-clearcase-setcs) : 1.65
+	use the interactive form to set the buffer
+	(ah-clearcase-setcs-and-kill-buffer): 1.65 new function, used as
+	the C-c C-c binding in edcs-mode.
+
+2005-12-28  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-gui-vtree-browser): 1.64 bugfix:
+	closed the when form too late.
+
+2005-12-23  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-cvsid)
+	(vc-clearcase-maintainer-address): 1.63 new constants
+	(ah-clearcase-file-fprop, vc-clearcase-registered)
+	(vc-clearcase-state, vc-clearcase-state)
+	(vc-clearcase-workfile-unchanged-p, vc-clearcase-register)
+	(vc-clearcase-responsible-p, vc-clearcase-checkin)
+	(vc-clearcase-find-version, vc-clearcase-checkout)
+	(vc-clearcase-revert, vc-clearcase-merge, vc-clearcase-merge-news)
+	(vc-clearcase-print-log, vc-clearcase-diff)
+	(vc-clearcase-annotate-command, vc-clearcase-previous-version)
+	(vc-clearcase-next-version, vc-clearcase-rename-file): 1.63 call
+	expand-file-name on file.
+	(vc-clearcase-gui-vtree-browser, vc-clearcase-list-checkouts)
+	(vc-clearcase-update-view, vc-clearcase-label-diff-report)
+	(vc-clearcase-list-view-private-files): 1.63 don't pass
+	default-directory to expand-file-name
+	(vc-clearcase-report-bug): 1.63 new function
+	(ah-clearcase-function-to-trace): 1.63 new variable
+	(ah-clearcase-trace-cleartool-tq): 1.63 use it
+	(ah-clearcase-untrace-cleartool-tq): 1.63 new function
+
+2005-12-22  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-do): 1.61 doc update.
+	(ah-clearcase-file-fprop): 1.61 renamed from
+	ah-clearcase-fprop-file, callers updated.
+	(ah-clearcase-reset-fprop): 1.61 renamed from
+	ah-clearcase-fprop-reset, callers updated.
+	(ah-clearcase-set-fprop-version): 1.61 renamed from
+	ah-clearcase-fprop-set-version, callers updated.
+	(ah-clearcase-set-fprop-version-simple): 1.61 renamed from
+	ah-clearcase-fprop-set-version-simple, callers updated.
+	(ah-clearcase-prepare-vprop): 1.61 renamed from
+	ah-clearcase-vprop-prepare, callers udpated.
+	(ah-clearcase-get-vprop): 1.61 renamed form
+	ah-clearcase-vprop-get, callers updated.
+	(ah-clearcase-version): 1.61 new function.
+
+2005-12-19  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-rmbranch-on-revert-flag): 1.60 new
+	variable.
+	(vc-clearcase-revert): 1.60 remove the current branch if there are
+	no versions on it after the uncheckout.
+	(ah-clearcase-edcs-mode-map): 1.60 define C-c C-c for
+	ah-clearcase-setcs
+
+2005-12-14  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-view-tag-complete): 1.59 don't use
+	test-completion, as Emacs21 does not have this function.
+	(vc-clearcase-edcs): 1.59 build an obarray of the view tags
+	instead of the string list.  The try-completion and
+	all-completions from Emacs21 cannot handle string lists.
+
+2005-12-05  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.58 only require the cl library at compile
+	time.
+	(ah-clearcase-vprop-get, ah-clearcase-revision-reserved-p): 1.58
+	replace find-if with a dolist loop
+	(vc-clearcase-checkout): 1.58 use concat instead of format for
+	constructing the message.
+
+2005-12-03  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (with-clearcase-checkout): 1.57 renamed from
+	with-checkedout-dir, callers updated.
+	(with-clearcase-cfile): 1.57 renamed from with-comment-file,
+	callers updated.
+
+2005-10-24  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-no-label-action): 1.56 new
+	variable.
+	(vc-clearcase-create-snapshot): 1.56 use it to decide what to do
+	when a label does not exist.
+
+2005-10-12  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-view-tag-complete): 1.55 re-wrote
+	it to make use of all-completions, test-completion, try-completion
+
+2005-10-07  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-list-checkouts): 1.54 set the
+	default directory of the *clearcase-lsco* buffer to the directory
+	being searched for checkouts.
+
+2005-09-09  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-create-snapshot): 1.53 call
+	expand-file-name on dir before using it.
+
+2005-08-24  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-gui-vtree-browser)
+	(vc-clearcase-list-checkouts, vc-clearcase-update-view)
+	(vc-clearcase-label-diff-report)
+	(vc-clearcase-list-view-private-files): 1.52 use expand-file-name
+
+2005-08-12  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.51 validated the file using checkdoc.  All
+	comments and strings are spellchecked.  Converted the file from
+	using folding.el to outline-minor for outlining.
+
+2005-08-11  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (with-comment-file): 1.48 check input arguments
+	and evaluate them only once.
+
+2005-08-08  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.47 only require cc-defs at compile time.
+
+2005-08-05  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.45 installation instructions updated.  all
+	the keymaps (including menus) are autoloaded.  added (autoloaded)
+	code to update vc-handled-backends with the CLEARCASE tag.
+	(vc-clearcase-registered): 1.45 a simple version of the function
+	is autoloaded, will only load the vc-clearcase package if needed.
+	(ah-clearcase-cleartool-program, vc-clearcase-what-version)
+	(vc-clearcase-what-rule, vc-clearcase-what-view-tag)
+	(vc-clearcase-gui-vtree-browser, vc-clearcase-list-checkouts)
+	(vc-clearcase-update-view, vc-clearcase-edcs): 1.45 added an
+	autoload cookie.
+	(vc-clearcase-label-diff-report): 1.45 renamed from
+	ah-clearcase-label-diff-report, plus added an autoloaded cookie.
+	(vc-clearcase-list-view-private-files): 1.45 renamed from
+	ah-clearcase-list-view-private-files, plus added an autoloaded
+	cookie.
+	(ah-clearcase-log-view-mode): 1.46 reindented.
+
+2005-07-28  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-save-stop-data): 1.44 now a
+	defcustom variable.
+
+2005-07-20  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-log-view-forward-version): 1.43
+	new function.
+	(ah-clearcase-log-view-backward-version): 1.43 new function.
+	(ah-clearcase-log-view-mode-map): 1.43 keymap updated with new
+	functions.
+	(ah-clearcase-fprop): 1.43 added revision-list as a new slot.
+	(ah-clearcase-fprop-reset): 1.43 reset revision-list
+	(ah-clearcase-maybe-set-vc-state): 1.43 use %Vn to get the
+	version (instead of %Sn).
+	(vc-clearcase-registered): 1.43 use %Vn and %PVn instead of %Sn
+	and %PSn to get the version and parent version.
+	(vc-clearcase-dir-state): 1.43 use %Vn instead of %Sn.
+	(ah-clearcase-revision-reserved-p): 1.43 use %PVn instead of %PSn.
+	(vc-clearcase-print-log): 1.43 call vc-setup-buffer on the log
+	buffer.
+	(vc-clearcase-show-log-entry): 1.43 bugfix in the regexp that
+	searches for the revision.
+	(vc-clearcase-annotate-command): 1.43 call vc-setup-buffer on
+	`buf'
+	(ah-clearcase-annotate-post-process): 1.43 use a simpler regexp to
+	match the revision.
+	(vc-clearcase-previous-version): 1.43 new function.
+	(vc-clearcase-next-version): 1.43 new function.
+
+2005-07-19  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el most of the changes below represent porting to
+	Emacs 22.
+	(ah-cleartool-tq-handler): 1.41 use string-to-number instead of
+	string-to-int.
+	(with-comment-file): 1.41 now takes an argument for the
+	comment-file and binds the file name to that.  Also re-written to
+	use with-temp-file.  All callers updated.
+	(vc-version-backup-file-name): 1.41 the advice now runs after the
+	function and modifies the result.
+	(ah-clearcase-find-version-helper): 1.41 new function.
+	(vc-clearcase-find-version): 1.41 new function.
+	(vc-clearcase-checkout): 1.41 use a simplified implementation.
+	(vc-clearcase-annotate-command): 1.41 the fmt string passed to
+	cleartool now asks for the full revision instead of only the first
+	20 characters of it.
+	(vc-clearcase-annotate-time): 1.41 new function.
+	(vc-clearcase-annotate-extract-revision-at-line): 1.41 new
+	function.
+	(ah-clearcase-annotate-mktime): 1.41 renamed from
+	ah-clearcase-annotate-mk-age, callers updated.  Semantics also
+	changed to return the number of day as a fraction.
+	(ah-clearcase-annotate-post-process): 1.41 renamed from
+	ah-clearcase-annotate-age-buffer, callers updated.  It now
+	computes the time, age and version of each line in the buffer plus
+	re-formats the buffer.
+	(ah-clearcase-annotate-mark-deleted): 1.41 bind inhibit-read-only
+	to t.
+	(with-comment-file): 1.42 bugfix: remove the file named in the
+	variable specified by the user instead of hardcodin it to
+	comment-file.
+
+2005-07-12  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-finish-checkout): 1.40 pass -ptime
+	parameter to the checkout command.
+
+2005-04-02  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-log-view-again): 1.38 erase the
+	buffer before running the cleartool command.
+
+2005-03-31  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase): 1.37 toplevel customize group
+	added.
+	(ah-clearcase-cleartool-program): 1.37 new customize variable.
+	(ah-clearcase-vtree-program, ah-cleartool-timeout,
+	ah-cleartool-idle-timeout, ah-clearcase-diff-format,
+	ah-clearcase-diff-cleanup-flag): 1.37 changed to customize
+	variables.
+	(ah-cleartool-tq-start, ah-cleartool-do): 1.37 use
+	ah-clearcase-cleartool-program instead of the hardcoded
+	"cleartool"
+	(ah-clearcase-diff-cleanup-flag): 1.37
+
+2005-03-21  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-checkout): 1.36 bugfix: checking
+	out a revision that is not latest.
+	(vc-clearcase-merge, vc-clearcase-merge-news): 1.36 bugfix: return
+	0 as success
+
+2005-03-10  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-signal-error): 1.35 handle the
+	case when POS is nil
+
+2005-03-02  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-update-view): 1.34 strip directory
+	path of the last slash, it seems cleartool cannot update a
+	directory if this is the toplevel VOB name and ends in a slash.
+	(with-comment-file): 1.34 use temporary-file-directory
+	(vc-clearcase-edcs): 1.34 use temporary-file-directory
+
+2005-02-15  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-signal-error): 1.33 new function.
+	(ah-cleartool-wait-for): 1.33 call ah-cleartool-signal-error
+	instead of just error.
+	(ah-clearcase-all-vprops): 1.33 use a list instead of a hash-table
+	(ah-clearcase-vprop-get): 1.33 updated to use a list for
+	ah-clearcase-all-vprops
+	(ignore-cleartool-errors): 1.33 new macro
+	(vc-clearcase-registered): 1.33 use ignore-cleartool-errors
+	(vc-clearcase-responsible-p): 1.33 only trap ah-cleartool-error in
+	the condition-case
+	(vc-clearcase-create-snapshot): 1.33 only trap ah-cleartool-error
+	in the condition-case, use ignore-cleartool-errors
+
+2005-01-26  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-label-diff-report): 1.32 use
+	accept-process-output in the wait loop
+
+2005-01-17  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-fprop-set-version): 1.31 use the
+	case form
+	(ah-clearcase-vprop-get): 1.31 try to determine if the view is
+	dynamic.  For dynamic views ah-clearcase-declare-view is no longer
+	needed.
+	(vc-clearcase-diff): 1.31 use the ecase form.
+	(vc-clearcase-what-version): 1.31 use the case form
+	(ah-clearcase-setcs): 1.31 use the case form
+
+2004-12-29  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-tq-start): 1.30 on non windows
+	systems, wait for the cleartool prompt, erase it from the process
+	buffer and only than start the transaction queue.  This avoids a
+	'spurious' error from the tq package when we start it.
+	(ah-cleartool-wait-for): 1.30 only call sit-for when the
+	transaction is not complete -- response time is much improved this
+	way.  Also the code for processing the resut has been rewriten to
+	avoid unnecessary operations.
+	Indentation information for the with-checkedout-dir and
+	with-comment-file is now at the end of the file, to be eval-ed
+	when the file is loaded.
+
+2004-12-26  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-idle-timeout): 1.29 increased to
+	15 minutes
+	(ah-cleartool-wait-for): 1.29 assert that tid is not nil at the
+	begining; also call sit-for in the inner loop, see comment inside
+	function for the reason.
+	(ah-clearcase-label-diff-report): 1.29 start with default values
+	for the length of the report columns, this produces a more
+	pleasing result when the report is empty or the labels are longer
+	than any version in the report
+
+2004-12-23  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-wait-for): 1.28 rewrote code that
+	waits for the transaction to complete, uses accept-process-output.
+	Works better on Solaris ClearCase.
+
+2004-12-01  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-label-diff-report): 1.27 bugfix:
+	wait until both cleartool processes finished (used to wait until
+	one of them finished, an 'and' was replaced by an 'or')
+
+2004-11-28  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-fprop-checkout-will-branch-p):
+	1.26 new function.
+	(vc-clearcase-state-needs-update): no longer needed.
+	(vc-clearcase-state): 1.26 vc-clearcase-state-heuristic now
+	returns full state info, no longer need to run a cleartool update.
+	(vc-clearcase-state-heuristic): 1.26 now computes the full
+	clearcase state (for the purposes of vc-clearcase.el).  In
+	particular, the needs-patch case is also detected.
+	(vc-clearcase-checkout): 1.26 use
+	ah-clearcase-fprop-checkout-will-branch-p
+
+2004-11-17  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-annotate-show-color-map): 1.25 removed, as
+	it is not a clearcase specific function.
+
+2004-11-12  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-list-view-private-files): 1.24 new
+	function.
+
+2004-11-04  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.23 checked spelling of all comments
+	(ah-cleartool-save-stop-data): 1.23 make it a defvar.  Not sure
+	why it was defined as a function.
+	(ah-cleartool-tq-stop): 1.23 ah-cleartool-save-stop-data is no
+	longer a function.
+	(ah-cleartool-ask): 1.23 don't print abort information when
+	clearool is timed out.
+	(vc-clearcase-workfile-unchanged-p): 1.23 different
+	implementation, as the -status_only option to cleardiff does not
+	work.
+	(vc-clearcase-register): 1.23 double the timeout for the mkelem
+	command.  It seems to fail all the time.
+	(vc-clearcase-checkout): 1.23 accept (eq rev t) as a request to
+	uptate to latest version.  Update version info when we've updated
+	the file.
+	(vc-clearcase-diff): 1.23 don't use replace-regexp, its
+	documentation said it is not designed for lisp programs.
+
+2004-10-16  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-idle-timeout): 1.22 new variable.
+	(ah-cleartool-last-command-timestamp): 1.22 new variable
+	(ah-cleartool-tq-start): 1.22 initialize
+	ah-cleartool-last-command-timestamp to current time
+	(ah-cleartool-tq-stop): 1.22 really insert a form feed this time;
+	insert the value of ah-cleartool-ntid as well.
+	(ah-cleartool-ask): 1.22 restart cleartool if it was idle for more
+	than ah-cleartool-idle-timeout seconds.
+
+2004-10-08  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-save-stop-data): 1.21 new
+	variable, used for debugging mysterious timeouts in cleartool
+	(ah-cleartool-tq-stop): 1.21 when ah-cleartool-save-stop-data is
+	not nil, we save the contents of the tq buffer plus some state
+	info to the *cleartool-aborts* buffer.
+	(ah-cleartool-wait-for): 1.21 the wait strategy has changed, we
+	only timeout if cleartool has not written anything to the
+	tq-buffer in ah-cleartool-timeout seconds.
+	(vc-clearcase-workfile-unchanged-p): 1.21 use the -status_only
+	option to the cleartool diff command, more efficient this way.
+
+2004-09-30  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-create-snapshot): 1.20 use
+	file-name-directory on DIR, as it might be a file.
+
+2004-09-29  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-wait-for): 1.19 comment update.
+	(ah-clearcase-vprop-prepare): 1.19 use the extended semantics of
+	ah-clearcase-vprop-get
+	(ah-clearcase-finish-checkout): 1.19 use a format string for the
+	checkout command, plus increase the cleartool timeout by 50% when
+	running it.
+	(vc-clearcase-create-snapshot): 1.19 change to the snapshot
+	directory before running the command to avoid a complaint from
+	cleartool that the pathname is not within a VOB.
+
+2004-09-21  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-label-diff-report): 1.18 variables
+	from the ps-print package are declared special, to avoid a
+	compiler warning.  Also set them using set on the result of
+	make-local-variable (code is more compact this way).
+
+2004-09-20  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-status-rx): 1.17 don't match the
+	end of line $ as we might have two answers in the buffer and it
+	will match the later.
+	(ah-cleartool-wait-for): 1.17 re-written to use a with-timeout
+	form when waiting for the transaction to complete.
+
+2004-09-19  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-fprop): 1.15 add a 'broken-view
+	checkout type
+	(ah-clearcase-fprop-broken-view-p): 1.15 the fprop struct hoolds
+	the broken-view state internally, so just return that.
+	(ah-clearcase-fprop-set-version): 1.15 don't update the checkout
+	status or modeline when the file is hijacked or is in a broken
+	view.
+	(ah-clearcase-fprop-set-version-simple): 1.15 check for a broken
+	view as well.
+	(ah-clearcase-fprop): 1.16 checkout slot renamed to status
+	(ah-clearcase-fprop-hijacked-p, ah-clearcase-fprop-checkedout-p,
+	ah-clearcase-fprop-broken-view-p, ah-clearcase-fprop-set-version,
+	ah-clearcase-fprop-set-version-simple, vc-clearcase-what-version):
+	1.16 use ah-clearcase-fprop-status
+	(ah-clearcase-vprop-get): 1.16 rewritten to accept a vprop, a
+	fprop or a string as an argument, and find the correct vprop from
+	any of these.
+	(ah-clearcase-snapshot-view-p, ah-clearcase-dynamic-view-p): 1.16
+	made it a defsubst, ah-clearcase-vprop-get is smarter now.
+	(vc-clearcase-what-version): 1.16 added info about a broken view.
+
+2004-09-17  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-status-rx): 1.14 match only at the
+	end of the string.
+	(ah-cleartool-question-rx): 1.14 new regexp
+	(ah-cleartool-tq-rx): 1.14 combines ah-cleartool-status-rx and
+	ah-cleartool-question-rx, used by the transaction queue to
+	determine the end of record from cleartool.
+	(ah-cleartool-tq-handler): 1.14 try ah-cleartool-status-rx, than
+	ah-cleartool-question-rx, and report an error if the latter
+	matches.  Also removed the save-match-data form as Emacs already
+	saves these.
+	(ah-cleartool-ask): 1.14 use ah-cleartool-tq-rx as the end of
+	record regexp.
+	(ah-clearcase-fprop-broken-view-p): 1.14 new function
+	(ah-clearcase-snapshot-view-p, ah-clearcase-dynamic-view-p): 1.14
+	accept a fprop as argument in addition to a vprop or a view-tag
+	name.
+	(vc-clearcase-state): 1.14 don't run cleartool update if the view
+	is broken, instead report an error.
+	(vc-clearcase-dir-state): 1.14 use new semantics of
+	ah-clearcase-snapshot-view-p
+
+2004-09-16  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-tq-handler): 1.13 use = instead of
+	eq
+	(ah-clearcase-fprop-set-version): 1.13 use null instead of eq
+	(ah-clearcase-vprop-prepare): 1.13 use char-equal instead of eq
+	(ah-clearcase-refresh-files-in-view): 1.13 renamed view to
+	view-tag
+	(vc-clearcase-create-snapshot): 1.13 use format to create the
+	cleartool command, quote dir properly
+	(vc-clearcase-list-checkouts): 1.13 use string= instead of equal
+	(ah-clearcase-label-diff-report): 1.13 new function
+	(vc-clearcase-edcs): 1.13 disable undo when inserting the
+	configspec, re-enable it afterwards.
+	(clearcase-global-menu): 1.13 add ah-clearcase-label-diff-report
+	to the Clearcase menu.
+
+2004-09-10  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-fprop-initialized-p): 1.12 made it
+	a defsubst
+	(vc-clearcase-checkout): 1.12 if the checkout will create a
+	branch, don't check if someone else has a reserved checkout on the
+	version.
+	(vc-clearcase-diff): 1.12 determine whether the diff is empty
+	depends on the diff type: serial or diff
+
+2004-09-05  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-cleartool-tq-maybe-start,
+	ah-clearcase-fprop-file, ah-clearcase-fprop-hijacked-p,
+	ah-clearcase-fprop-checkedout-p): 1.11 made them a defsubst
+
+2004-09-03  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-vtree-program): 1.10 new variable
+	(vc-clearcase-create-snapshot): reuse BRANCHP to signify that the
+	label should be moved.
+	(vc-clearcase-gui-vtree-browser): 1.10 use
+	ah-clearcase-vtree-program
+
+2004-08-30  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (ah-clearcase-declare-view,
+	ah-clearcase-refresh-files-in-view): 1.9 use the same name in the
+	body as in the parameter declaration (for some reason, the CVS
+	Emacs byte compiler didn't pick this)
+
+2004-08-29  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (vc-clearcase-checkout): 1.8 use format to
+	construct the checkout command
+
+2004-08-24  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.7 commentary moved inside a fold, some
+	functions moved around for better code structure
+	(ah-clearcase-refresh-files-in-view): 1.7 renamed from
+	ah-clearcase-after-setcs
+	(edcs-mode): 1.7 defined as an alias for ah-clearcase-edcs-mode.
+	(clearcase-global-menu): 1.7 Non file Clearcase commands go in
+	here instead of the Version Control menu.
+
+2004-08-22  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.6 TODO list update
+	(ah-clearcase-wash-mode-line): 1.6 new function
+	(ah-clearcase-fprop-set-version): 1.6 use
+	ah-clearcase-wash-mode-line, don't add '.../' to the mode-line
+	string
+	(ah-clearcase-vprop-prepare): 1.6 rewritten
+	(ah-clearcase-diff-format, ah-clearcase-diff-cleanup-flag): 1.6
+	new variables
+	(vc-clearcase-diff): 1.6 use ah-clearcase-diff-format and
+	ah-clearcase-diff-cleanup-flag
+	(vc-clearcase-what-version): 1.6 new function
+	(ah-clearcase-view-tag-complete): 1.6 use compare-string instead
+	of string= and substring
+	(vc-clearcase-edcs): 1.6 don't remove the old view-tag list
+
+2004-08-15  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el (with-checkedout-dir, with-comment-file): 1.5
+	found out about ,@
+	(ah-clearcase-edcs-mode): 1.5 add syntax codes for the comment
+	character and setup comment-start & co
+
+2004-08-14  Alexandru Harsanyi  <haral@users.sourceforge.net>
+
+	* vc-clearcase.el: 1.3 all packages are required at runtime
+	(ah-clearcase-fprop-initialized-p): 1.3 doc update
+	(ah-clearcase-fprop-reset): 1.3 accepts a NIL fprop, doc update
+	(ah-clearcase-fprop-set-version): 1.3 set version info for
+	hijacked files as well but omit the checkout mode and mode line
+	(ah-clearcase-fprop-set-version-simple): 1.3 set basic information
+	even for hijacked files.
+	(ah-clearcase-snapshot-view-p): 1.3 reorganized
+	(ah-clearcase-dynamic-view-p): 1.3 new function
+	(ah-clearcase-vprop-prepare, ah-clearcase-maybe-set-vc-state,
+	vc-clearcase-registered, vc-clearcase-state,
+	vc-clearcase-dir-state, vc-clearcase-responsible-p,
+	vc-clearcase-checkin, ah-clearcase-revision-reserved-p,
+	vc-clearcase-checkout, vc-clearcase-revert, vc-clearcase-merge,
+	vc-clearcase-merge-news, vc-clearcase-diff): 1.3 the cleartool
+	command is constructed using a format string.  Accepts filenames
+	containing spaces.
+	(ah-clearcase-vprop-prepare): 1.3 fix test for view type (snapshot
+	or dynamic)
+	(ah-clearcase-gensym-prefix): 1.3 new variable
+	(with-checkedout-dir): 1.3 new macro
+	(with-comment-file): 1.3 new macro
+	(vc-clearcase-registered): 1.3 when the file is hijacked, ask
+	cleartool for information using the version extended pathname.
+	(vc-clearcase-register, vc-clearcase-rename-file): 1.3 use
+	with-checkedout-dir
+	(ah-clearcase-finish-checkout): 1.3 quote pname
+	(vc-clearcase-rename-file): 1.3 use
+	ah-clearcase-with-checked-out-dir
+	(ah-clearcase-edcs-mode): 1.3 fix typo in name
+	(vc-clearcase-edcs): 1.3 don't wait for the previous lsview
+	transaction.
+	(ah-clearcase-tmpdir): 1.3 new variable
+	(vc-clearcase-checkin, ah-clearcase-finish-checkout,
+	vc-clearcase-rename-file): 1.3 use with-comment-file

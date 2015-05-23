@@ -1,0 +1,95 @@
+-*- outline -*- 
+
+* Release 1.115
+
+** ability to set and query the current UCM activity
+   This is implemented in `vc-clearcase-set-activity' (also bound to C-x v k)
+   and `vc-clearcase-show-current-activity'
+
+** Fix Bug 1741439 vc-clearcase-diff will incorectly use {vc-}diff-switches
+** Fix Bug 1740843 Uncheckout may corrupt the ClearCase status of a file
+** Fix Bug 1740839 Handling HIJACKED files in UCM views can fail
+
+* Release 1.106
+
+** HIJACKED files are now handled correctly
+   On checkout (C-x v v) Emacs will ask whether to keep the changes in the
+   HIJACKED file or discard them.  The vc.el terminology for this is 'stealing
+   the lock', the question Emacs asks is "Claim lock retaining changes? ".
+
+   See the doc string of `vc-clearcase-steal-lock' for more details.
+
+** you can now cancel the last check-in
+   using the "C-x v c" `vc-cancel-version'.
+
+   The last checked in version of a file will be removed and the file checked
+   out.  Emacs will ask you whether to discard the actual changes or put them
+   in the checked out file.
+
+   See the doc string for `vc-clearcase-cancel-version' for more details.
+
+** `ah-clearcase-diff-format' variable removed
+   It is replaced by `vc-clearcase-diff-switches'.  See the doc string of that
+   variable.
+
+** preliminary support for UCM
+   When a file is in a UCM view, the following will be changed from normal
+   ClearCase behaviour:
+
+*** the stream name is displayed in the modeline
+*** `vc-clearcase-what-view-tag' will display the UCM activity and stream
+*** `vc-clearcase-print-log' will also display activity names for each version
+
+* Release 1.95
+
+** some configuration variables have been renamed.
+   If you had non default values for these, you will need to update
+   your emacs initialisation file.  The easiest way is to browse the
+   vc-clearcase customisation group to set them again.
+
+   `ah-clearcase-checkout-comment-type' was renamed from
+   `vc-clearcase-checkout-comment-type'
+
+   `ah-clearcase-checkout-policy' was renamed from
+   `vc-clearcase-checkout-policy'
+
+** `vc-clearcase-label-diff-report' creates clickable links in the report
+   This only works in Emacs 22, as it requires the button library.
+
+** Fix Bug 1564792 "Process cleartool not running" error
+** Fix Bug 1608947 member* unbound error
+** Fix Bug 1608952 Username truncated in vc-annotate
+
+* Release 1.87
+
+** instalation instructions have been updated 
+
+   There are now with separate Emacs-Lisp forms for Emacs21 and
+   Emacs22
+
+** Two new variables control how a checkout is performed
+
+   vc-clearcase-checkout-policy and
+   vc-clearcase-checkout-comment-type.  For more details, see their
+   docstrings or browse the vc-clearcase customisation group.
+
+* Release 1.82
+
+The main improvement in this release is the ability to complete label
+names for vc-create-snapshot and vc-clearcase-label-diff-report.  A
+new vc-clearcase-start-view function is provided (bound to C-x v f),
+plus some other minor updates.  See ChangeLog for more details.
+
+* Release 1.69
+
+This is the first public release of vc-clearcase.el.  I have used it
+privately for more than a year without any problems.  This version
+works with GNU Emacs 21 and the current CVS version.  It has been
+tested with Clearcase on Windows XP and Solaris.  See the
+documentation section in vc-clearcase.el for installation
+instructions.
+
+HINT: The version number is 1.69 because this is the version of the
+vc-clearcase.el in CVS.
+
+

@@ -1,0 +1,149 @@
+This is clearcase.info, produced by makeinfo version 4.6 from
+clearcase.texi.
+
+INFO-DIR-SECTION XEmacs
+START-INFO-DIR-ENTRY
+* Clearcase: (clearcase).      New Clearcase Version Control for XEmacs (UNIX, Windows).
+END-INFO-DIR-ENTRY
+   This document describes the XEmacs package called clearcase.
+Copyright (C) 2001 Adrian Aichner.
+
+
+File: clearcase.info,  Node: Top,  Next: Clearcase Overview,  Up: (dir)
+
+Clearcase Package
+*****************
+
+This is the XEmacs Clearcase Reference Manual, Version 1.00 (for XEmacs
+21.1, 21.2), released 2001-12-09, by Adrian Aichner <adrian@xemacs.org>.
+
+* Menu:
+
+* Clearcase Overview::                Overview of clearcase package
+* Clearcase Installation::            Installation of the clearcase package
+* Known Problems of Clearcase::       Problems, Workarounds, and Fixes
+* Concept Index::                     An item for each concept
+
+
+File: clearcase.info,  Node: Clearcase Overview,  Next: Clearcase Installation,  Prev: Top,  Up: (dir)
+
+Clearcase Overview
+******************
+
+`clearcase' is a Configuration Management System of Rational Software
+Corporation written by Kevin Esler <esler@rational.com>.
+
+   The `clearcase' package described here supports ClearCase version
+control from within the `XEmacs' editor.
+
+  1.  Make sure you're using Gnu Emacs-20.4 or XEmacs-21.1 or later.
+
+     Make sure that you DON'T load old versions of vc-hooks.el which
+     contain incompatible versions of the tq package (functions
+     tq-enqueue and friends). In particular, Bill Sommerfeld's VC/CC
+     integration has this problem.
+
+  2.  Insert this in your emacs startup file: (unless (noninteractive)
+     (require 'clearcase))
+
+
+   When you begin editing in any view-context, a ClearCase menu will
+appear and ClearCase Minor Mode will be activated for you.
+
+
+File: clearcase.info,  Node: Clearcase Installation,  Next: Known Problems of Clearcase,  Prev: Clearcase Overview,  Up: (dir)
+
+Clearcase Installation
+**********************
+
+You have following three choices to install clearcase (*note Using
+Packages: (xemacs)Using Packages.):
+
+  1. Use the package GUI:
+
+        * In XEmacs Release 21.1:
+
+          Select a download site under
+
+               Options->Manage Packages->Add Download Site
+
+          and after listing available packages with
+
+               Options->Manage Packages->List & Install
+
+          install `clearcase' with
+
+               Packages->Toggle install `clearcase'
+               Packages->Install/Remove Selected
+
+          followed by starting a fresh XEmacs.
+
+        * In XEmacs Beta Release 21.2-bXX:
+
+          Menus have been re-arranged in XEmacs 21.2.
+
+          Select a download site under
+
+               Tools->Packages->Add Download Site
+
+          and after listing available packages with
+
+               Tools->Packages->List and Install
+
+          install `clearcase' with
+
+               Packages->Toggle install `clearcase'
+               Packages->Install/Remove Selected
+
+          followed by starting a fresh XEmacs.
+
+
+  2. Run XEmacs command
+
+          M-x package-admin-add-binary-package RET CLEARCASE-PACKAGE-TARBALL-PATH
+
+     after tarball download with EFS or ftp.
+
+  3.  Extract the clearcase tarball(s) into the xemacs-packages
+     hierarchy from your favorite shell.
+
+     `bash', `csh', `ksh', `zsh' come to mind on `UNIX' systems;
+     `Cygwin's' `bash', `cmd.exe', and `command.exe' for `Windows
+     95/98/NT'.
+
+          cd INSTALLATION-DIRECTORY/xemacs-packages;
+          gzip -dc CLEARCASE-PACKAGE-TARBALL-PATH | tar -xvf -
+
+
+
+File: clearcase.info,  Node: Known Problems of Clearcase,  Next: Concept Index,  Prev: Clearcase Installation,  Up: Top
+
+Known Problems of Clearcase
+***************************
+
+  1. None known.  Please report any using M-x report-emacs-bug.
+
+
+
+File: clearcase.info,  Node: Concept Index,  Prev: Known Problems of Clearcase,  Up: Top
+
+Concept Index
+*************
+
+* Menu:
+
+* Bugs:                                  Known Problems of Clearcase.
+* How to install clearcase:              Clearcase Installation.
+* Limitations:                           Known Problems of Clearcase.
+* What is clearcase?:                    Clearcase Overview.
+
+
+
+Tag Table:
+Node: Top332
+Node: Clearcase Overview878
+Node: Clearcase Installation1799
+Node: Known Problems of Clearcase3544
+Node: Concept Index3790
+
+End Tag Table

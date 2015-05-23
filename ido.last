@@ -1,0 +1,39 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/eyotang/Auto_Upgrade/IPW_AutoUpgrade/src/" . "upgradetasks/")
+ ("/home/eyotang/Auto_Upgrade/IPW_AutoUpgrade/" . "src/")
+ ("/home/eyotang/Auto_Upgrade/" . "IPW_AutoUpgrade/")
+ ("/home/eyotang/" . "Auto_Upgrade/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/eyotang/Auto_Upgrade/IPW_AutoUpgrade/src/upgradetasks/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "startserviceprocessestask.py"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/eyotang/Auto_Upgrade/IPW_AutoUpgrade/src/upgradetasks/" (21851 29293 0 0) "registerndbclustertask.py" "stoplicensetask.pyc" "startdatanodetask.py" "startstorageservertask.py" "registercsvresgrptask.pyc" "startserviceprocessestask.py" "stopndbdatanodetask.pyc" "performupgradetask.py" "stopmgmnodetask.py" "stopndbdatanodetask.py" "startmgmnodetask.py" "__init__.py" "migrateinnodbdatatask.pyc" "stopstorageservertask.py" "backuptask.py" "startcsvresgrptask.pyc" "startmgmnodetask.pyc" "stopsqlnodetask.pyc" "registerndbclustertask.pyc" "startassistantprocesstask.pyc" "backuptask.pyc" "startlicensetask.pyc" "syncndbschematask.pyc" "__init__.pyc" "checkndbreplicationtask.pyc" "syncndbschematask.py" "stopassistantprocesstask.py" "stopcsvresgrptask.py" "stopserviceprocesstask.py" "deactivatehpasrdtask.py" "starthardeningfunctiontask.pyc" "registercsvresgrptask.py" "registerclustertask.pyc" "migrateinnodbdatatask.py" "stopassistantprocesstask.pyc" "checkndbreplicationtask.py" "startdatanodetask.pyc" "startstorageservertask.pyc" "startinnodbtask.py" "startsqlnodetask.pyc" "stopsqlnodetask.py" "startserviceprocessestask.pyc" "setinnodbtomcatchroottask.pyc" "startsqlnodetask.py" "stopcsvenginetask.pyc" "stopndbclustertask.py" "stopcsvresgrptask.pyc" "setsqlnodechroottask.py" "stopserviceprocesstask.pyc" "stoplicensetask.py" "startlicensetask.py" "deactivatehpasrdtask.pyc" "setinnodbtomcatchroottask.py" "stopotherprocesstask.py" "stophardeningfunctiontask.py" "startcsvresgrptask.py" "shorteningfailovertimetask.pyc" "startassistantprocesstask.py" "startinnodbtask.pyc" "stopstorageservertask.pyc" "registerclustertask.py" "startcsvprocesstask.pyc" "stopotherprocesstask.pyc" "stophardeningfunctiontask.pyc" "performupgradetask.pyc" "shorteningfailovertimetask.py" "setsqlnodechroottask.pyc" "stopmgmnodetask.pyc" "registercsvenginetask.pyc" "stopndbclustertask.pyc" "../" "./")
+
+ ("/home/eyotang/Auto_Upgrade/IPW_AutoUpgrade/src/" (21814 23638 0 0) "__init__.py" "pretasks/" "posttasks/" "__init__.pyc" "common/" "template/" "healthchecktasks/" "tasks/" "upgradetasks/" "util/" "logs/" "ssh/" "../" "./")
+
+ ("/home/eyotang/Auto_Upgrade/IPW_AutoUpgrade/" (21851 29012 0 0) "ipw_upgrade.py" "exec_tasks.json" "target/" "network.json.single" "network.json" "network.json.entry1" ".shadow" "network.json.medium1" "src/" "log/" "../" "./")
+
+ ("/home/eyotang/Auto_Upgrade/" (21831 43595 0 0) ".pydevproject" "IPW_AutoUpgrade/" ".project" ".gitignore" "install.sh" ".git/" "../" "./")
+
+ ("/home/eyotang/" (21851 26835 0 0) "kernel-default-3.0.101-0.35.1.x86_64.rpm" "emacs.tar.gz" "ruby-1.8.7.p357-0.9.11.1.x86_64.rpm" "kernel-source-3.0.101-0.35.1.x86_64.rpm" "license.per" "alist.sh" "Auto_Upgrade/" "11-sp3/" "11-sp2/" "11-sp1/" "emacs-24.4.tar.bz2" "emacs-24.4/" "three-piece.tar.bz2" "active.om.cim" "eclipse.tar.bz2" "cur.py" "sample.txt" ".slmlog" "ipworks.cfg" "license_1k.per" "workspace/" "ipwsetup/" "emacs-24.4.tar.gz" "shell shock patch.tar.gz" "eclipse/" "hanoi/" "emacs/" "kernel-default-devel-3.0.101-0.35.1.x86_64.rpm" "kernel-default-base-3.0.101-0.35.1.x86_64.rpm" "max_temperature_map.rb" "ISO/" "../" "./")
+
+ ("/home/" (21845 65430 0 0) "eyotang/" "exionyu/" "ewenhch/" "ehuadia/" "admin/" "../" "./")
+
+ ("/root/" (21855 3495 0 0) "Auto_Install/" "inst-sys/" ".emacs.d/" "AVA90116_4_R1D04_build4301.iso" "ipw_inap_hd.cim" ".xsession-errors" "SuSEfirewall2.txt" ".lesshst" "inapgt4/" "ss7trace.log" "vc-clearcase-master.zip" ".eclipse/" "ipwss.log" ".pulse/" ".gnupg/" ".gconf/" "a3radiusd.old" ".xsession-errors.old" ".pulse-cookie" ".Xauthority" "SLE-11-SP3-SDK-DVD-x86_64-GM-DVD1.iso" "vc-clearcase-master/" ".gstreamer-0.10/" "a3csvdemon.old" ".pyhistory" "emacs.d-master.zip" "active.om.cim" "a3eapd.old" ".tvtool.cnf" "Auto_Upgrade.2015-04-24/" ".bash_history" "network.json" "update_EP_info.sh" "LPY111903-LINHD-R3C_1_EC14/" "a3radiusd" ".nautilus/" ".esd_auth" ".mysql_history" ".vmware/" "Desktop/" ".viminfo" "test.py" ".tvtool/" ".slmlog" ".gitconfig" "a3eapd" "test.cpp" "workspace/" ".recently-used.xbel" ".ICEauthority" ".wireshark/" "ipwerh-snmp" "emacs.d.org.tar.gz" "dhcpv4server.txt" ".suse_register.log" "emacs.d.tar.gz" ".emacs-desktop/" "ipworks_dump.sql" ".gnome2/" "HA_package_SP3_8883/" ".gconfd/" ".mozilla/" ".config/" "HA_package_SP3_8883.tar.gz" ".gnome2_private/" ".bashrc" ".xauthqCvOkc" "IPWjre/" ".skel/" ".gvfs/" ".exrc" ".dmrc" ".dbus/" "a3csvdemon" "autoinst.xml" "ipw14bmnt_cp1ep11/" "SLES-11-SP3-DVD-x86_64-GM-DVD1.iso" "Documents/" "test" "dhcpv4server.txt.bak" "amos/" ".ssh/" ".kbd/" "ss7/" "bin/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -1,0 +1,220 @@
+\input texinfo   @c -*-texinfo-*-
+@c %**start of header
+@setfilename clearcase.info
+@settitle XEmacs Clearcase Reference Manual
+@dircategory XEmacs
+@direntry
+* Clearcase: (clearcase).      New Clearcase Version Control for XEmacs (UNIX, Windows).
+@end direntry
+@c footnotestyle separate
+@c paragraphindent 2
+@c %**end of header
+@setchapternewpage odd
+@ifinfo
+This document describes the XEmacs package called clearcase.
+Copyright @copyright{} 2001 Adrian Aichner.
+@end ifinfo
+
+@c @c Combine indices.
+@c @synindex cp fn
+@c @syncodeindex vr fn
+@c @syncodeindex ky fn
+@c @syncodeindex pg fn
+@c @syncodeindex tp fn
+
+@titlepage
+@c @sp 10
+@c @comment The title is printed in a large font.
+@c @center @titlefont{Clearcase}
+@c @c The following two commands start the copyright page.
+@c @page
+@c @vskip 0pt plus 1filll
+@c Copyright @copyright{} 2000 Adrian Aichner.
+@title XEmacs Clearcase Reference Manual
+@subtitle Version 1.00 (for XEmacs 21.1, 21.2), dated 2001-12-09
+
+@author by Adrian Aichner
+@page
+@vskip 0pt plus 1filll
+@sp 2
+@c Version 3.3 @*
+@c Revised for XEmacs Versions 21.0,@*
+@c April 1998.@*
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+section entitled ``GNU General Public License'' is included
+exactly as in the original, and provided that the entire resulting
+derived work is distributed under the terms of a permission notice
+identical to this one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that the section entitled ``GNU General Public License'' may be
+included in a translation approved by the Free Software Foundation
+instead of in the original English.
+@end titlepage
+@node Top, Clearcase Overview, , (dir)
+@comment node-name, next,          previous, up
+@chapter Clearcase Package
+
+This is the XEmacs Clearcase Reference Manual, Version 1.00 (for XEmacs
+21.1, 21.2), released 2001-12-09, by @email{adrian@@xemacs.org, Adrian
+Aichner}.
+
+@menu
+* Clearcase Overview::                Overview of clearcase package
+* Clearcase Installation::            Installation of the clearcase package
+* Known Problems of Clearcase::       Problems, Workarounds, and Fixes
+* Concept Index::                     An item for each concept
+@end menu
+
+@node Clearcase Overview, Clearcase Installation, Top, (dir)
+@comment node-name,     next,          previous, up
+@chapter Clearcase Overview
+@cindex What is clearcase?
+
+@code{clearcase} is a Configuration Management System of Rational
+Software Corporation written by @email{esler@@rational.com, Kevin
+Esler}.
+
+The @code{clearcase} package described here supports ClearCase version
+control from within the @code{XEmacs} editor.
+
+@enumerate
+
+@item
+
+Make sure you're using Gnu Emacs-20.4 or XEmacs-21.1 or later.
+
+Make sure that you DON'T load old versions of vc-hooks.el which contain
+incompatible versions of the tq package (functions tq-enqueue and
+friends). In particular, Bill Sommerfeld's VC/CC integration has this
+problem.
+
+@item
+
+Insert this in your emacs startup file:
+(unless (noninteractive)
+  (require 'clearcase))
+
+@end enumerate
+
+When you begin editing in any view-context, a ClearCase menu will appear
+and ClearCase Minor Mode will be activated for you.
+
+@node Clearcase Installation, Known Problems of Clearcase, Clearcase Overview, (dir)
+@comment node-name,     next,          previous, up
+@chapter Clearcase Installation
+@cindex How to install clearcase
+
+You have following three choices to install clearcase (@pxref{Using
+Packages, Using Packages, , xemacs}):
+
+@enumerate
+
+@item
+Use the package GUI:
+
+@itemize @bullet
+
+@item
+In XEmacs Release 21.1:
+
+Select a download site under
+
+@example
+Options->Manage Packages->Add Download Site
+@end example
+
+and after listing available packages with
+
+@example
+Options->Manage Packages->List & Install
+@end example
+
+install @code{clearcase} with
+
+@example
+Packages->Toggle install `clearcase'
+Packages->Install/Remove Selected
+@end example
+
+followed by starting a fresh XEmacs.
+
+@item
+In XEmacs Beta Release 21.2-bXX:
+
+Menus have been re-arranged in XEmacs 21.2.
+
+Select a download site under
+
+@example
+Tools->Packages->Add Download Site
+@end example
+
+and after listing available packages with
+
+@example
+Tools->Packages->List and Install
+@end example
+
+install @code{clearcase} with
+
+@example
+Packages->Toggle install `clearcase'
+Packages->Install/Remove Selected
+@end example
+  
+followed by starting a fresh XEmacs.
+
+@end itemize
+
+@item
+Run XEmacs command
+
+@example
+@kbd{M-x package-admin-add-binary-package RET @var{clearcase-package-tarball-path}}
+@end example
+
+after tarball download with EFS or ftp.
+
+@item
+
+Extract the clearcase tarball(s) into the xemacs-packages hierarchy from
+your favorite shell.
+
+@code{bash}, @code{csh}, @code{ksh}, @code{zsh} come to mind on
+@code{UNIX} systems; @code{Cygwin's} @code{bash}, @code{cmd.exe}, and
+@code{command.exe} for @code{Windows 95/98/NT}.
+
+@example
+@kbd{cd @var{installation-directory}/xemacs-packages;
+gzip -dc @var{clearcase-package-tarball-path} | tar -xvf -}
+@end example
+ 
+@end enumerate
+
+@node Known Problems of Clearcase, Concept Index, Clearcase Installation, Top
+@comment node-name,    next,  previous,      up
+@chapter Known Problems of Clearcase
+@cindex Limitations
+@cindex Bugs
+
+@enumerate
+
+@item
+None known.  Please report any using M-x report-emacs-bug.
+
+@end enumerate
+
+@node Concept Index, , Known Problems of Clearcase, Top
+@comment node-name,    next,  previous,      up
+@unnumbered Concept Index
+@printindex cp
+@contents
+@bye
