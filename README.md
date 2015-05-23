@@ -31,9 +31,9 @@ Python, Javascript, PHP and a number of other languages.
   and ".smex-items". One special view "NONE-VIEW" is used for NONE view set.
 * View name displayed on frame title.
 * GUI merge will be automatically popup, once checkin conflict.
-* C-x vv checkout      | Without comments
-* C-x vu undo checkout | Does not preserve the contents of the checked-out version.
-* C-x vv checkin       | Without comments
+* C-x vv checkout -nc
+* C-x vu undo checkout -rm
+* C-x vv checkin -nc
 
 ## Requirements
 
