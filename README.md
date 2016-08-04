@@ -1,7 +1,7 @@
 # A reasonable Emacs config
 
 This is my emacs configuration tree, continually used and tweaked
-since 2015, and it may be a good starting point for other Emacs
+since 2000, and it may be a good starting point for other Emacs
 users, especially those who are web developers. These days it's
 somewhat geared towards OS X, but it is known to also work on Linux
 and Windows.
@@ -24,21 +24,11 @@ In particular, there's a nice config for *tab autocompletion*, and
 flycheck is used to immediately highlight syntax errors in Ruby, HAML,
 Python, Javascript, PHP and a number of other languages.
 
-## Clearcase supported
-
-* Desktops are stored in an independent directory "~/.emacs-desktop/<view>/",
-  to ensure different view reserved their own ".emacs.desktop", ".session"
-  and ".smex-items". One special view "NONE-VIEW" is used for NONE view set.
-* View name displayed on frame title.
-* GUI merge will be automatically popup, once checkin conflict.
-* C-x vv checkout -nc
-* C-x vu undo checkout -rm
-* C-x vv checkin -nc
-
 ## Requirements
 
-* Emacs 24.4 or greater (note that Emacs 24 is required for some
-  functionality, and become the minimum required version now.)
+* Emacs 23.3 or greater (note that Emacs 24 is required for some
+  functionality, and will likely become the minimum required version
+  some time soon.)
 * To make the most of the programming language-specific support in
   this config, further programs will likely be required, particularly
   those that [flycheck](https://github.com/flycheck/flycheck) uses to
@@ -50,7 +40,7 @@ To install, clone this repo to `~/.emacs.d`, i.e. ensure that the
 `init.el` contained in this repo ends up at `~/.emacs.d/init.el`:
 
 ```
-git clone https://github.com/eyotang/emacs.d.git ~/.emacs.d
+git clone https://github.com/purcell/emacs.d.git ~/.emacs.d
 ```
 
 Upon starting up Emacs for the first time, further third-party
@@ -98,9 +88,16 @@ You might also want to check out `emacs-starter-kit` and `prelude`.
 If you hit any problems, please first ensure that you are using the latest version
 of this code, and that you have updated your packages to the most recent available
 versions (see "Updates" above). If you still experience problems, go ahead and
-[file an issue on the github project](https://github.com/eyotang/emacs.d).
+[file an issue on the github project](https://github.com/purcell/emacs.d).
 
-- Ben Tang
+-Steve Purcell
 
 <hr>
 
+[![](http://api.coderwall.com/purcell/endorsecount.png)](http://coderwall.com/purcell)
+
+[![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://uk.linkedin.com/in/stevepurcell)
+
+[sanityinc.com](http://www.sanityinc.com/)
+
+[@sanityinc](https://twitter.com/)

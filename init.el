@@ -67,7 +67,13 @@
 (require 'init-darcs)
 (require 'init-git)
 ;(require 'init-github)
-(require 'init-clearcase)
+;(require 'init-clearcase)
+
+
+(require 'init-google-c-style)
+(require 'init-sr-speedbar)
+(require 'init-gtags)
+(require 'init-ttcn)
 
 (require 'init-compile)
 (require 'init-crontab)
