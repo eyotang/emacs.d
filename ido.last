@@ -2,10 +2,11 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/root/gopl.io/" . "ch2/")
  ("/root/code/MasteringAlgorithmsC/Tree/" . "BiTree/")
  ("/root/code/MasteringAlgorithmsC/" . "Tree/")
  ("/root/code/" . "erlang/")
- ("/root/" . "code/")
+ ("/root/" . "gopl.io/")
  ("/home/eyotang/Auto_Upgrade/IPW_AutoUpgrade/src/" . "upgradetasks/")
  ("/home/eyotang/Auto_Upgrade/IPW_AutoUpgrade/" . "src/")
  ("/home/eyotang/Auto_Upgrade/" . "IPW_AutoUpgrade/")
@@ -14,6 +15,7 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/root/gopl.io/ch2/"
  "/root/code/erlang/"
  "/root/code/MasteringAlgorithmsC/Tree/BiTree/"
  "/home/eyotang/Auto_Upgrade/IPW_AutoUpgrade/src/upgradetasks/"
@@ -21,6 +23,7 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "tempconv.go"
  "area_server.erl"
  "erea_server.erl"
  "bitree.h"
@@ -30,11 +33,17 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/root/gopl.io/ch2/" (22820 1408 11753 944000) "../" "./" "tempconv.go")
+
+ ("/root/" (22820 1440 46627 886000) ".bashrc" ".profile" "emacs.d-master.zip" ".cache/" ".Xauthority" "../" ".ssh/" ".emacs-desktop/" "./" "go-mode.el-master.zip" "gopl.io/" ".gnupg/" ".emacs.d/" ".gconf/" ".dbus/" ".bash_history")
+
+ ("/root/gopl.io/" (22820 803 297775 953000) "ch2/" "../" "./")
+
+ ("/root/./" (22820 937 783363 301000) ".bashrc" ".profile" "emacs.d-master.zip" ".cache/" ".Xauthority" "../" ".ssh/" ".emacs-desktop/" "./" "go-mode.el-master.zip" "gopl.io/" ".gnupg/" ".emacs.d/" ".gconf/" ".dbus/" ".bash_history")
+
  ("/root/code/erlang/" (22434 56654 932737 930000) "area_server.beam" "TAGS" "./" "area_server.erl" "../")
 
  ("/root/code/" (22434 54583 320834 990000) "./" "MasteringAlgorithmsC/" "DesignPattern/" "erlang/" "../")
-
- ("/root/" (22434 54894 520356 991000) ".ICEauthority" ".gitconfig" ".bash_history" "Downloads/" ".gconf/" "emacs_config-master/" ".Xauthority" ".bashrc" ".config/" ".profile" ".vboxclient-clipboard.pid" "code/" ".xsession-errors" ".xsession-errors.old" ".lesshst" "Desktop/" "Videos/" "./" ".vboxclient-display.pid" ".vboxclient-draganddrop.pid" ".gnupg/" "Templates/" ".cache/" "Public/" "Documents/" ".vboxclient-seamless.pid" ".emacs-desktop/" ".local/" ".dbus/" "Pictures/" ".ssh/" "../" "emacs_config-master.zip" ".emacs.d/" "Music/")
 
  ("/root/code/MasteringAlgorithmsC/" (22428 46238 787377 338000) "Stack/" ".gitignore" "Tree/" ".git/" "README.md" "./" "List/" "../")
 

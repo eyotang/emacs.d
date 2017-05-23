@@ -62,13 +62,13 @@
 (require 'init-mmm)
 
 (require 'init-editing-utils)
+(require 'init-golang)
 
 (require 'init-vc)
 (require 'init-darcs)
 (require 'init-git)
 ;(require 'init-github)
 ;(require 'init-clearcase)
-
 
 (require 'init-google-c-style)
 (require 'init-sr-speedbar)
