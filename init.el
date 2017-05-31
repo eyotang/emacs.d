@@ -62,7 +62,6 @@
 (require 'init-mmm)
 
 (require 'init-editing-utils)
-(require 'init-golang)
 
 (require 'init-vc)
 (require 'init-darcs)
@@ -74,6 +73,7 @@
 (require 'init-sr-speedbar)
 (require 'init-gtags)
 (require 'init-ttcn)
+(require 'init-golang)
 
 (require 'init-compile)
 (require 'init-crontab)
