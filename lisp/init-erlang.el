@@ -4,8 +4,6 @@
 (when (package-installed-p 'erlang)
   (require 'erlang-start))
 
-(add-to-list 'ac-modes 'erlang-mode)
-
 (setq erlang-electric-commands
   '(erlang-electric-comma
     erlang-electric-semicolon
