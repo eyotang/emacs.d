@@ -29,18 +29,9 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
 
-(defconst sanityinc/no-ssl (and (memq system-type '(windows-nt ms-dos))
-                                (not (gnutls-available-p))))
-
 ;;; Also use Popkit for most packages
 (add-to-list 'package-archives
-             `("popkit" . ,(if sanityinc/no-ssl
-                              "http://elpa.popkit.org/packages/"
-                            "https://elpa.popkit.org/packages/")))
-
-(unless sanityinc/no-ssl
-  ;; Force SSL for GNU ELPA
-  (setcdr (assoc "gnu" package-archives) "https://elpa.gnu.org/packages/"))
+             `("popkit" . "https://elpa.popkit.org/packages/"))
 
 ;; NOTE: In case of MELPA problems, the official mirror URL is
 ;; https://www.mirrorservice.org/sites/stable.melpa.org/packages/
