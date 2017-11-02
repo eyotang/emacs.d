@@ -102,7 +102,7 @@
 (require 'init-haml)
 (require 'init-http)
 (require 'init-python-mode)
-(require 'init-haskell)
+;;(require 'init-haskell)
 (require 'init-elm)
 (require 'init-ruby-mode)
 (require 'init-rails)
