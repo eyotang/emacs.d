@@ -32,11 +32,11 @@
 (defconst sanityinc/no-ssl (and (memq system-type '(windows-nt ms-dos))
                                 (not (gnutls-available-p))))
 
-;;; Also use Melpa for most packages
+;;; Also use Popkit for most packages
 (add-to-list 'package-archives
-             `("melpa" . ,(if sanityinc/no-ssl
-                              "http://melpa.org/packages/"
-                            "https://melpa.org/packages/")))
+             `("popkit" . ,(if sanityinc/no-ssl
+                              "http://elpa.popkit.org/packages/"
+                            "https://elpa.popkit.org/packages/")))
 
 (unless sanityinc/no-ssl
   ;; Force SSL for GNU ELPA
