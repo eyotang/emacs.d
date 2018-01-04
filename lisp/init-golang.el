@@ -3,4 +3,13 @@
 
 (require 'go-mode-autoloads)
 
+(defun style-hook ()
+  (setq c-basic-offset 4
+        c-indent-level 4
+        tab-width 4
+        indent-tabs-mode nil
+        default-tab-width 4))
+
+(add-hook 'go-mode-hook 'style-hook)
+
 (provide 'init-golang)
