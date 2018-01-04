@@ -61,6 +61,9 @@
 (require 'init-ibuffer)
 (require 'init-flycheck)
 
+(require 'init-pbcopy)
+(require 'init-mouse)
+
 (require 'init-recentf)
 (require 'init-smex)
 (require 'init-ivy)
