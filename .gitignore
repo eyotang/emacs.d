@@ -1,7 +1,9 @@
 /url/cache
 /.emacs.desktop
 /auto-save-list
+/network-security.data
 /.session
+/session.*
 /custom.el
 *.elc
 CVS
@@ -17,7 +19,8 @@ cookies
 /newsticker
 /ac-comphist.dat
 \#*
-/elpa*
+/elpa
+/elpa-*
 site-lisp/package/
 /swank
 /.mc-lists.el
@@ -36,4 +39,13 @@ site-lisp/package/
 /.cask/
 /.sx/
 /org-clock-save.el
-recentf
+/ditaa*.jar
+/ido.last
+/recentf
+/viper
+/projectile-bookmarks.eld
+/anaconda-mode/
+/.historian
+/.uptimes.el
+/rake.cache
+/plantuml.jar

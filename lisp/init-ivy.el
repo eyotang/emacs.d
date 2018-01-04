@@ -1,14 +1,22 @@
+;;; -*- lexical-binding: t -*-
 (when (maybe-require-package 'ivy)
+  (add-hook 'after-init-hook 'ivy-mode)
   (after-load 'ivy
     (setq-default ivy-use-virtual-buffers t
+                  ivy-virtual-abbreviate 'fullpath
                   ivy-count-format ""
                   projectile-completion-system 'ivy
                   ivy-initial-inputs-alist
                   '((man . "^")
                     (woman . "^")))
+
     ;; IDO-style directory navigation
-    (define-key ivy-minibuffer-map (kbd "C-j") #'ivy-immediate-done)
     (define-key ivy-minibuffer-map (kbd "RET") #'ivy-alt-done)
+    (dolist (k '("C-j" "C-RET"))
+      (define-key ivy-minibuffer-map (kbd k) #'ivy-immediate-done))
+
+    (define-key ivy-minibuffer-map (kbd "<up>") #'ivy-previous-line-or-history)
+
     (when (maybe-require-package 'diminish)
       (diminish 'ivy-mode)))
 
@@ -17,20 +25,10 @@
     (interactive)
     (require-package 'flx)
     (setq-default ivy-re-builders-alist
-                  '((t . ivy--regex-fuzzy))))
-
-  (add-hook 'after-init-hook
-            (lambda ()
-              (when (bound-and-true-p ido-ubiquitous-mode)
-                (ido-ubiquitous-mode -1))
-              (when (bound-and-true-p ido-mode)
-                (ido-mode -1))
-              (ivy-mode 1))))
-
+                  '((t . ivy--regex-fuzzy)))))
 
 (when (maybe-require-package 'ivy-historian)
   (add-hook 'after-init-hook (lambda () (ivy-historian-mode t))))
-
 
 (when (maybe-require-package 'counsel)
   (setq-default counsel-mode-override-describe-bindings t)
@@ -39,14 +37,29 @@
       (diminish 'counsel-mode)))
   (add-hook 'after-init-hook 'counsel-mode)
 
-  (when (and (executable-find "ag") (maybe-require-package 'projectile))
-    (defun sanityinc/counsel-ag-project (initial-input)
-      "Search using `counsel-ag' from the project root for INITIAL-INPUT."
-      (interactive (list (thing-at-point 'symbol)))
-      (counsel-ag initial-input (condition-case err
-                                    (projectile-project-root)
-                                  (error default-directory))))
-    (global-set-key (kbd "M-?") 'sanityinc/counsel-ag-project)))
+  (when (maybe-require-package 'projectile)
+    (let ((search-function
+           (cond
+            ((executable-find "rg") 'counsel-rg)
+            ((executable-find "ag") 'counsel-ag)
+            ((executable-find "pt") 'counsel-pt)
+            ((executable-find "ack") 'counsel-ack))))
+      (when search-function
+        (defun sanityinc/counsel-search-project (initial-input &optional use-current-dir)
+          "Search using `counsel-ag' from the project root for INITIAL-INPUT.
+If there is no project root, or if the prefix argument
+USE-CURRENT-DIR is set, then search from the current directory
+instead."
+          (interactive (list (thing-at-point 'symbol)
+                             current-prefix-arg))
+          (let ((current-prefix-arg)
+                (dir (if use-current-dir
+                         default-directory
+                       (condition-case err
+                           (projectile-project-root)
+                         (error default-directory)))))
+            (funcall search-function initial-input dir)))))
+    (global-set-key (kbd "M-?") 'sanityinc/counsel-search-project)))
 
 
 (when (maybe-require-package 'swiper)

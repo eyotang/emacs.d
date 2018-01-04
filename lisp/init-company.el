@@ -1,11 +1,8 @@
 ;; WAITING: haskell-mode sets tags-table-list globally, breaks tags-completion-at-point-function
 ;; TODO Default sort order should place [a-z] before punctuation
 
-(setq tab-always-indent 'complete)  ;; use 't when company is disabled
+(setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials t)
-;; Stop completion-at-point from popping up completion buffers so eagerly
-(setq completion-cycle-threshold 5)
-
 
 (when (maybe-require-package 'company)
   (add-hook 'after-init-hook 'global-company-mode)
@@ -16,7 +13,8 @@
     (define-key company-active-map (kbd "C-n") 'company-select-next)
     (define-key company-active-map (kbd "C-p") 'company-select-previous)
     (setq-default company-backends '((company-capf company-dabbrev-code) company-dabbrev)
-                  company-dabbrev-other-buffers 'all))
+                  company-dabbrev-other-buffers 'all
+                  company-tooltip-align-annotations t))
   (global-set-key (kbd "M-C-/") 'company-complete)
   (when (maybe-require-package 'company-quickhelp)
     (add-hook 'after-init-hook 'company-quickhelp-mode))
